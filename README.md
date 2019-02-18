@@ -1,3 +1,90 @@
+ /*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package problema2kervins;
+
+import static java.lang.System.out;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Administrador
+ */
+public class Problema2Kervins {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+   
+        Scanner br = new Scanner(System.in); 
+        ArrayList<Integer> arra1 = new ArrayList<Integer>();
+        ArrayList<Integer> arraynum = new ArrayList<Integer>();
+        int y = 0;
+       out.println("Numero de la Sumatoria: ");
+	int _sumatoria = br.nextInt();
+       out.println("Numero de digitos de la Sumatoria: ");
+	int _digitos = br.nextInt();
+        out.print("Ingrese  Rango 1: ");
+	int rango1 = br.nextInt();
+        out.print("Ingrese Rango 2 : ");
+        int rango2 = br.nextInt();
+        out.println("Numero de listas:");
+	int cantidad = br.nextInt();
+//recorriendo mis entradas de rangos
+        for(int x = 0; x<rango2; x++){
+            arraynum.add(x+1);
+        }
+//numeros aleatorios
+        Random ran = new Random(System.currentTimeMillis());
+        int contador = 0;
+        while(contador != cantidad){
+            int datRan = ran.nextInt(arraynum.size());
+            if(!arra1.contains(arraynum.get(datRan))){
+                arra1.add(arraynum.get(datRan));
+            }
+            if(arra1.size() == _digitos){
+                int xy = 0;
+                
+                for(int x = 0; x<arra1.size(); x++){
+                    xy += arra1.get(x);
+                }
+                if(xy == _sumatoria){             
+                    obtenerDatos(arra1);
+                    contador++;
+                    arra1.clear();
+                }else{
+                    arra1.clear();
+                }
+           }
+      }
+        
+    }
+    
+    //obtenemos los datos que mostraremos en pantalla
+    public static void obtenerDatos(ArrayList<Integer> ls){
+        String nums = "";
+        for(int x = 0; x<ls.size(); x++){
+            if(x== ls.size()-1){
+                nums+= ls.get(x);
+            }
+            else
+            {
+           nums+= ls.get(x)+" + ";
+            }
+        }
+       out.println(nums);
+    }
+
+}
+
+ ---------------------
+ 
  BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
         System.out.println ("Introduzca un Numero: ");
         String nu = br.readLine ();
