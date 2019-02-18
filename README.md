@@ -33,7 +33,68 @@
 }
 
 
+-------------------------------
 
+
+
+        int rango[] ={1,9};
+        algo(20,4,rango);
+                 
+}
+        
+           
+public static void algo(int suma,int sumandos, int rango[]){
+       
+        ArrayList<Integer> _rango=new ArrayList<Integer>();//se almacena rango de numeros
+        ArrayList<Object> _sumandos=new ArrayList<Object>();
+
+            //llenar lista con el rango 
+        for(int i=rango[1]; i<=rango[1];i++)
+        {
+            _rango.add(i);
+        }
+        
+        //llenamos una lista con los rangos que representaran a los sumandos
+        for(int i=0; i<suma;i++)
+        {
+            
+        _sumandos.add(_rango);
+        
+        }
+        
+        
+        //sumamos ....
+        int siguiente=0;
+        for(int i=0;i<sumandos;i++)
+        {
+            
+//            out.println(_sumandos.get(i));
+            ArrayList<Integer> lista=(ArrayList<Integer>)_sumandos.get(i);//recorremos las listas que estan dentro de la  lista
+            
+           for(int j=0;j<lista.size();j++) 
+           {
+             
+           //out.print(lista.get(j));
+             out.print(" + ");
+             
+            
+                 for(int k=sumandos; k<lista.size(); k++)
+                 {
+                     out.print(lista.get(k));
+                      out.println(k);
+                 }
+                 
+           }
+            
+         
+       
+        }
+    }
+           
+           
+      
+  
+    }
 
 
 
