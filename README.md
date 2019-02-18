@@ -176,6 +176,7 @@ inner join modulos m on m.id_modulo=p.id_modulo
 where m.modulo='ADMIN'
 )
 
+--select por modulo
 select 
 u.username,
 m.modulo
